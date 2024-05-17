@@ -1,4 +1,4 @@
-#pip install. pip install pandas numpy matplotlib seaborn, pip install scikit-learn
+#pip install. pip install pandas numpy matplotlib seaborn plotly scikit-learn dash
 
 print('hello world')
 
@@ -6,8 +6,10 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+import plotly.express as px
 from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import PolynomialFeatures
+from dash import Dash, html, dcc
 
 fuel = pd.read_csv("FUEL.csv")
 print(fuel.head())
