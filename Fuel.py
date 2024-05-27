@@ -1,4 +1,4 @@
-# pip install pandas numpy matplotlib seaborn plotly scikit-learn dash
+# pip install pandas numpy matplotlib seaborn plotly streamlit scikit-learn dash
 
 print('hello world')
 
