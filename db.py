@@ -5,8 +5,15 @@ import plotly.express as px
 # Configuração da página do Streamlit
 st.set_page_config(layout="wide")
 st.title("Análise de Dados de Combustível")
+
 # Carregando os dados
 df = pd.read_csv("FUEL.csv")
+
+
+# Adicionando o CSS customizado
+with open("style.css") as f:
+    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
 
 # Filtros na barra lateral
 st.sidebar.header("Filtros")
