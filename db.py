@@ -35,12 +35,10 @@ fig1 = px.bar(df_filtered, x='modelo', title='Distribuição de Veículos por An
               labels={'modelo': 'Modelos', 'count': 'Versões'})
 col1.plotly_chart(fig1, use_container_width=True)
 
-# Gráfico 2: Relação entre Deslocamento do Motor, Consumo na Cidade e Eficiência
-fig2 = px.scatter_3d(df_filtered, x='deslocamento_do_motor', y='consumo_cidade_mpg_ft1', 
-                     z='pontuação_eficiência_combustível', color='fabricante', 
+# Gráfico 2: Relação entre Deslocamento do Motor, Consumo na Cidade
+fig2 = px.scatter(df_filtered, x='deslocamento_do_motor', y='consumo_cidade_mpg_ft1', color='fabricante', 
                      title='Relação entre Deslocamento do Motor, Consumo de Combustível na Cidade e Pontuação de Eficiência de Combustível',
-                     labels={'deslocamento_do_motor': 'Deslocamento do Motor', 'consumo_cidade_mpg_ft1': 'Consumo de Combustível na Cidade (MPG)',
-                             'pontuação_eficiência_combustível': 'Pontuação de Eficiência de Combustível', 'fabricante': 'Fabricante'})
+                     labels={'deslocamento_do_motor': 'Deslocamento do Motor', 'consumo_cidade_mpg_ft1': 'Consumo de Combustível na Cidade (MPG)', 'fabricante': 'Fabricante'})
 col2.plotly_chart(fig2, use_container_width=True)
 
 # Gráfico 3: Distribuição de Veículos por Classe e Fabricante
