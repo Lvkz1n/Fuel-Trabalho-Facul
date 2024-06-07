@@ -4,7 +4,7 @@ import plotly.express as px
 
 # Configuração da página do Streamlit
 st.set_page_config(layout="wide")
-st.title("Análise de Dados de Combustível")
+st.title("Análise de Dados de Carros De Diferentes Épocas e Fabrincantes")
 
 # Carregando os dados
 df = pd.read_csv("FUEL.csv")
