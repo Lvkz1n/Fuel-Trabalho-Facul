@@ -4,7 +4,7 @@ import plotly.express as px
 
 # Configuração da página do Streamlit
 st.set_page_config(layout="wide")
-
+st.title("Análise de Dados de Combustível")
 # Carregando os dados
 df = pd.read_csv("FUEL.csv")
 
@@ -43,7 +43,7 @@ col2.plotly_chart(fig2, use_container_width=True)
 
 # Gráfico 3: Distribuição de Veículos por Classe e Fabricante
 fig3 = px.bar(df_filtered, y='classe', color='fabricante', orientation='h',
-              title='Distribuição de Veículos por Classe e Fabricante no Ano Selecionado',
+              title='Distribuição de Veículos por Classe e Fabricante',
               labels={'classe': 'Classe', 'fabricante': 'Fabricante', 'count': 'Quantidade'})
 col3.plotly_chart(fig3, use_container_width=True)
 
