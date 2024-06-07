@@ -1,24 +1,24 @@
-Documentação do Código: Análise de Dados de Combustível
+Documentação do Código: Análise de Dados de Combustível:
 Este documento fornece uma visão geral do código de um aplicativo de análise de dados de combustível usando Streamlit e Plotly. 
 Este aplicativo permite aos usuários explorar os dados de veículos com base em vários filtros e visualizar essas informações de maneira interativa.
 
-Importação das Bibliotecas (python)
+Importação das Bibliotecas: (python)
 import streamlit as st
 import pandas as pd
 import plotly.express as px
 As bibliotecas necessárias são importadas: streamlit para criar a interface web, pandas para manipulação de dados e plotly.express para visualização dos dados.
 
-Configuração da Página
+Configuração da Página:
 st.set_page_config(layout="wide")
 st.title("Análise de Dados de Combustível")
 st.set_page_config(layout="wide"): Configura a página do Streamlit para usar o layout largo, permitindo mais espaço para os gráficos.
 st.title("Análise de Dados de Combustível"): Define o título do aplicativo.
 
-Carregamento dos Dados
+Carregamento dos Dados:
 df = pd.read_csv("FUEL.csv")
 Os dados do arquivo CSV FUEL.csv são carregados em um DataFrame do pandas. 
 
-Filtros na Barra Lateral
+Filtros na Barra Lateral:
 st.sidebar.header("Filtros")
 anos = st.sidebar.multiselect(
     "Selecione o(s) ano(s):",
@@ -46,8 +46,7 @@ col1, col2 = st.columns(2)
 col3, col4, col5 = st.columns(3)
 O layout da página é dividido em colunas para organizar a disposição dos gráficos.
 
-Gráficos
-
+Gráficos:
 Gráfico 1: Distribuição de Veículos por Modelo
 fig1 = px.bar(df_filtered, x='modelo', title='Distribuição de Veículos por Ano', 
               labels={'modelo': 'Modelos', 'count': 'Versões'})
@@ -86,7 +85,7 @@ col5.plotly_chart(fig5, use_container_width=True)
 Cria um gráfico de barras empilhadas mostrando a distribuição de veículos por classe e a presença de turbo.
 col5.plotly_chart(fig5, use_container_width=True): (Exibe o gráfico na quinta coluna.)
 
-Considerações Finais
+Considerações Finais:
 Este aplicativo permite aos usuários explorar os dados de veículos de uma forma interativa e visual. Os filtros na barra lateral oferecem 
 flexibilidade para selecionar os anos e fabricantes de interesse, enquanto os gráficos exibem as informações filtradas de maneira clara e 
 intuitiva.
